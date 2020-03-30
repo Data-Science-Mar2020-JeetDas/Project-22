@@ -1,0 +1,358 @@
+
+# -*- coding: utf-8 -*-
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
+import pandas
+
+
+df = pd.read_csv("C:/Users/Jeet Das/Desktop/mental-health-2.csv",encoding="utf-8")
+
+print("\n----------------------- output data :---------------------\n")
+print("Project-22 : Country wise Nurses working in mental health sector (per 100,000)");
+print("\n------------------------------------------------------------\n")
+
+
+# Question – A : get row and column numbers 
+
+print('---------------------------------------------')
+print("Dimension of the data frame = ",df.shape)
+print('---------------------------------------------')
+
+# Question – B : print column names :
+
+print('------------------------\n Column names as follows :')
+print('------------------------\n')
+count = 0
+for col in df.columns: 
+        print(count,"-->",col)
+        count = count+1
+print("\n-----------------------------\n")
+
+# Question - C : print available country
+
+country = df.groupby(['Location'])[['Period']].count()
+print("---------------------------------")
+print("\tAvailable country names : ")
+print("-------------------------------")
+print(country)
+print("-------------------------------")
+count = 0
+for row in range(len(country)): 
+        count = count+1
+print("total no. of country = ",count)        
+print("-----------------------------\n")
+
+
+# Question - D : Available years data for which data is available
+
+years = df.groupby(['Period'])[['Location']].count()
+print("---------------------------------")
+print("\tAvailable years data : ")
+print("-------------------------------")
+print(years)
+print("-------------------------------")
+count = 0
+for row in range(len(years)): 
+        count = count+1
+print("total no. of years = ",count)        
+print("-----------------------------\n")
+
+
+
+# Question - 01 : Afghanistan
+
+Afghanistan = df[df.Location == 'Afghanistan']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Afghanistan)
+
+# Question - 02 : Algeria  
+
+Algeria  = df[df.Location == 'Algeria']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Algeria)                                                                         
+
+# Question - 03 : Argentina 
+
+Argentina  = df[df.Location == 'Argentina']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Argentina)                                  
+
+# Question - 04 : Armenia 
+
+Armenia = df[df.Location == 'Armenia']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Armenia)
+
+# Question - 05 : Bangladesh
+
+Bangladesh = df[df.Location == 'Bangladesh']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Bangladesh)
+
+# Question - 06 : Central African Republic
+
+Central_African_Republic = df[df.Location == 'Central African Republic']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Central_African_Republic)
+
+# Question - 07 : Chad
+
+Chad = df[df.Location == 'Chad']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Chad)
+
+# Question - 08 : China
+
+China = df[df.Location == 'China']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(China)
+
+# Question - 09 : India
+
+India = df[df.Location == 'India']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(India)
+
+# Question - 10 : Indonesia
+
+Indonesia = df[df.Location == 'Indonesia']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Indonesia)
+
+# Question - 11 : Thailand
+
+Thailand = df[df.Location == 'Thailand']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(Thailand)
+
+# Question - 12 : United Arab Emirates
+
+UAE = df[df.Location == 'United Arab Emirates']
+print("\n\n--------------[ OUTPUT ]----------------------\n\n")
+print(UAE)
+
+
+
+----------------------- output data :---------------------
+
+Project-22 : Country wise Nurses working in mental health sector (per 100,000)
+
+------------------------------------------------------------
+
+---------------------------------------------
+Dimension of the data frame =  (127, 4)
+---------------------------------------------
+------------------------
+ Column names as follows :
+------------------------
+
+0 --> Location
+1 --> Indicator
+2 --> Period
+3 --> First Tooltip
+
+-----------------------------
+
+---------------------------------
+        Available country names : 
+-------------------------------
+                             Period
+Location                           
+Afghanistan                       1
+Albania                           1
+Angola                            1
+Antigua and Barbuda               1
+Armenia                           1
+Australia                         1
+Azerbaijan                        1
+Bahrain                           1
+Bangladesh                        1
+Barbados                          1
+Belgium                           1
+Belize                            1
+Bhutan                            1
+Bosnia and Herzegovina            1
+Brazil                            1
+Brunei Darussalam                 1
+Bulgaria                          1
+Burkina Faso                      1
+Burundi                           1
+Cambodia                          1
+Canada                            1
+Central African Republic          1
+Chad                              1
+Chile                             1
+China                             1
+Colombia                          1
+Comoros                           1
+Congo                             1
+Cook Islands                      1
+Costa Rica                        1
+                            ...
+Sao Tome and Principe             1
+Saudi Arabia                      1
+Senegal                           1
+Serbia                            1
+Seychelles                        1
+Sierra Leone                      1
+Slovenia                          1
+South Sudan                       1
+Spain                             1
+Sri Lanka                         1
+Suriname                          1
+Sweden                            1
+Switzerland                       1
+Syrian Arab Republic              1
+Tajikistan                        1
+Thailand                          1
+Timor-Leste                       1
+Togo                              1
+Tonga                             1
+Tunisia                           1
+Turkey                            1
+Uganda                            1
+United Arab Emirates              1
+United Republic of Tanzania       1
+United States of America          1
+Uzbekistan                        1
+Vanuatu                           1
+Yemen                             1
+Zambia                            1
+Zimbabwe                          1
+
+[127 rows x 1 columns]
+-------------------------------
+total no. of country =  127
+-----------------------------
+
+---------------------------------
+        Available years data : 
+-------------------------------
+        Location
+Period          
+2013           2
+2015          16
+2016          91
+2017          18
+-------------------------------
+total no. of years =  4
+-----------------------------
+
+
+
+--------------[ OUTPUT ]----------------------
+
+
+      Location                                          Indicator  Period  \
+0  Afghanistan  Nurses working in mental health sector (per 10...    2016   
+
+   First Tooltip  
+0          0.098  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+Empty DataFrame
+Columns: [Location, Indicator, Period, First Tooltip]
+Index: []
+
+
+--------------[ OUTPUT ]----------------------
+
+
+Empty DataFrame
+Columns: [Location, Indicator, Period, First Tooltip]
+Index: []
+
+
+--------------[ OUTPUT ]----------------------
+
+
+  Location                                          Indicator  Period  \
+4  Armenia  Nurses working in mental health sector (per 10...    2016   
+
+   First Tooltip  
+4          11.24  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+     Location                                          Indicator  Period  \
+8  Bangladesh  Nurses working in mental health sector (per 10...    2016   
+
+   First Tooltip  
+8           0.87  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+                    Location  \
+21  Central African Republic   
+
+                                            Indicator  Period  First Tooltip  
+21  Nurses working in mental health sector (per 10...    2017          0.022  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+   Location                                          Indicator  Period  \
+22     Chad  Nurses working in mental health sector (per 10...    2016   
+
+    First Tooltip  
+22          0.021  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+   Location                                          Indicator  Period  \
+24    China  Nurses working in mental health sector (per 10...    2015   
+
+    First Tooltip  
+24           5.42  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+   Location                                          Indicator  Period  \
+55    India  Nurses working in mental health sector (per 10...    2016   
+
+    First Tooltip  
+55            0.8  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+     Location                                          Indicator  Period  \
+56  Indonesia  Nurses working in mental health sector (per 10...    2016   
+
+    First Tooltip  
+56           2.52  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+     Location                                          Indicator  Period  \
+112  Thailand  Nurses working in mental health sector (per 10...    2016   
+
+     First Tooltip  
+112           7.42  
+
+
+--------------[ OUTPUT ]----------------------
+
+
+                 Location                                          Indicator  \
+119  United Arab Emirates  Nurses working in mental health sector (per 10...   
+
+     Period  First Tooltip  
+119    2016           4.37  
